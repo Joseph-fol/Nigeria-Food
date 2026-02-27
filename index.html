@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nigeria Food </title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-[#f8f6f3]">
+    <!-- NavBar -->
+    <nav class="bg-white border-gray-200 shadow-md">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+            <a href="#" class="flex items-center">
+                <!-- <img src="https://flowbite.com/docs/images/logo.svg" class="h-8 mr-3" alt="Flowbite Logo" /> -->
+                <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-black">Niger <span
+                        class="text-red-500">Bite</span></span>
+            </a>
+
+            <div class="flex md:order-2">
+                <button type="button" data-collapse-toggle="navbar-search" aria-controls="navbar-search"
+                    aria-expanded="false"
+                    class="md:hidden text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 mr-1">
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 20 20">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                    </svg>
+                    <span class="sr-only">Search</span>
+                </button>
+
+                <!-- Navbar Search -->
+                <div class="items-center justify-between hidden gap-10 w-full md:flex md:w-auto md:order-1"
+                    id="navbar-search">
+
+                    <div class="relative mt-3 md:hidden">
+                        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                            <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                            </svg>
+                        </div>
+
+                        <input type="text" id="search-navbar"
+                            class="block w-full p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            placeholder="Search...">
+                    </div>
+
+                    <div>
+                        <p>Favorite</p>
+                    </div>
+
+                </div>
+
+                <div class="relative hidden md:block">
+                    <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                        <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                        </svg>
+                        <span class="sr-only">Search icon</span>
+                    </div>
+
+                    <input type="text" id="search-navbar"
+                        class="block w-full p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg "
+                        placeholder="Search...">
+                </div>
+
+                <button data-collapse-toggle="navbar-search" type="button"
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                    aria-controls="navbar-search" aria-expanded="false">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M1 1h15M1 7h15M1 13h15" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mx-5 lg:mx-[70px] md:mx-10">
+
+
+        <!-- Tags -->
+        <div class="flex-wrap flex mt-5 lg:gap-5 gap-3">
+
+            <div>
+                <select name="" id=""
+                    class="py-2 px-5 rounded-[50px] border border-gray-200 focus:border-green-500 text-gray-500 font-semibold">
+                    <option value="" target>All Categories</option>
+                    <option value="">Swallow</option>
+                    <option value="">Soups</option>
+                    <option value="">Snacks</option>
+                    <option value="">Rice Dishes</option>
+                    <option value="">Protein</option>
+                </select>
+            </div>
+
+            <div>
+                <select name="" id=""
+                    class="py-2 px-5 rounded-[50px] border border-gray-200 focus:border-green-500 text-gray-500 font-semibold">
+                    <option value="" target>All Regions</option>
+                    <option value="">Yoruba</option>
+                    <option value="">Igbo</option>
+                    <option value="">Hausa</option>
+                    <option value="">Edo</option>
+                    <option value="">Calabar</option>
+                </select>
+            </div>
+
+            <button
+                class="py-2 px-5 rounded-[50px] bg-white border border-gray-200 focus:border-green-500 text-gray-500 font-semibold">
+                Vegetarian </button>
+
+            <button
+                class="py-2 px-5 rounded-[50px] bg-white border border-gray-200 focus:border-green-500 text-gray-500 font-semibold" onclick="">
+                Spicy </button>
+        </div>
+    </div>
+
+    <!-- Card Section -->
+    <div class="max-w-screen-xl mx-auto p-5 sm:p-10 md:p-8">
+        <p class="font-semibold pb-5 text-gray-500">Showing <span class="text-black">16</span> dishes</p>
+
+        <div class="grid grid-cols-1 lg:grid-cols-4 sm:grid-cols-2 md:grid-cols-3 gap-7" id="foods">
+
+            <!-- CARD 1
+            <div class="rounded-t-[20px] overflow-hidden shadow-lg flex flex-col">
+                <a href="#"></a>
+                <div class="relative"><a href="#">
+                        <img class="w-full h-full"
+                            src="https://images.pexels.com/photos/61180/pexels-photo-61180.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500"
+                            alt="Sunset in the mountains">
+                        <div
+                            class="hover:bg-transparent transition duration-300 absolute bottom-0 top-0 right-0 left-0 bg-gray-900 opacity-25">
+                        </div>
+                    </a>
+                    <a href="#!">
+                        <div class="flex">
+                            <div class="text-xs absolute top-0 left-0 px-4 py-1 text-lg bg-white text-black mt-3 ml-3 mr-3  hover:bg-white hover:text-indigo-600 transition duration-500 ease-in-out rounded-[20px]">
+                                <p class="font-semibold text-md text-gray-500">Yoruba</p>
+                            </div>
+
+                            <div
+                                class="text-xs absolute top-0 right-0 bg-white px-4 py-2 text-black mt-3 mr-3 hover:bg-white hover:text-indigo-600 transition duration-500 ease-in-out">
+                                <p class="font-semibold text-md text-gray-500">Fav</p>
+                            </div>
+
+                        </div>
+                        
+                    </a>
+                </div>
+
+                <div class="px-4 py-4 mb-auto bg-white">
+                    <a href="#"
+                        class="font-bold text-xl inline-block hover:text-indigo-600 transition duration-500 ease-in-out inline-block mb-2">Jollof Rice</a>
+                    <p class="text-gray-500 text-md">
+                        The iconic West African one-pot rice dish cooked in a rich, spiced tomato...
+                    </p>
+                </div>
+
+                <div class="px-6 py-3 flex flex-row items-center justify-between bg-white border ">
+                    <span href="#" class="py-1 text-xs font-regular text-gray-900 mr-1 flex flex-row items-center">
+                        <svg height="13px" width="13px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512"
+                            style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                            <g>
+                                <g>
+                                    <path
+                                        d="M256,0C114.837,0,0,114.837,0,256s114.837,256,256,256s256-114.837,256-256S397.163,0,256,0z M277.333,256 c0,11.797-9.536,21.333-21.333,21.333h-85.333c-11.797,0-21.333-9.536-21.333-21.333s9.536-21.333,21.333-21.333h64v-128 c0-11.797,9.536-21.333,21.333-21.333s21.333,9.536,21.333,21.333V256z">
+                                    </path>
+                                </g>
+                            </g>
+                        </svg>
+                        <span class="ml-1">6 mins </span>
+                    </span>
+
+                    <p class="text-green-900 font-bold">₦2,500</p>
+                </div>
+            </div> -->
+            
+        </div>
+    </div>
+
+    <div id="foods">
+
+    </div>
+
+</body>
+<script src="script.js"></script>
+</html>
