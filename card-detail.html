@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="index.html">
+</head>
+
+<body>
+    <div class="bg-white min-h-screen flex items-center justify-center p-6">
+        <div
+            class="bg-gray-50 dark:bg-gray-800 shadow-lg rounded-2xl overflow-hidden max-w-4xl w-full grid md:grid-cols-2">
+
+            <!-- Recipe Image -->
+            <div class="h-64 md:h-auto">
+                <img src="https://images.pexels.com/photos/61180/pexels-photo-61180.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500"
+                    alt="Delicious Recipe" class="w-full h-full object-cover">
+            </div>
+
+            <!-- Recipe Content -->
+            <div class="p-6 flex flex-col justify-between">
+                <div>
+                    <h2 class="text-3xl font-bold font-serif text-gray-800 dark:text-white mb-2">Creamy Garlic Chicken
+                    </h2>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">A rich and savory chicken recipe perfect for dinner
+                        nights.</p>
+
+                    <!-- Ingredients -->
+                    <div class="mb-4">
+                        <h3 class="text-xl font-semibold text-teal-600 dark:text-teal-400 mb-2">Ingredients</h3>
+                        <ul class="list-disc pl-5 space-y-1 text-gray-700 dark:text-gray-200 text-sm">
+                            <li>2 chicken breasts</li>
+                            <li>4 cloves garlic, minced</li>
+                            <li>1 cup heavy cream</li>
+                            <li>1 tsp paprika</li>
+                            <li>Salt and pepper to taste</li>
+                        </ul>
+                    </div>
+
+                    <!-- Instructions -->
+                    <div>
+                        <h3 class="text-xl font-semibold text-teal-600 dark:text-teal-400 mb-2">Instructions</h3>
+                        <ol class="list-decimal pl-5 space-y-1 text-gray-700 dark:text-gray-200 text-sm">
+                            <li>Season the chicken and sear until golden.</li>
+                            <li>Add garlic and sauté until fragrant.</li>
+                            <li>Pour in cream and let it simmer.</li>
+                            <li>Return chicken and cook until done.</li>
+                            <li>Garnish and serve hot.</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <!-- Footer CTA -->
+                <div class="mt-6 text-right">
+                    <button
+                        class="bg-teal-600 hover:bg-teal-700 text-white font-semibold px-4 py-2 rounded-lg transition">Add to Cart </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>

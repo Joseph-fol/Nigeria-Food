@@ -9,8 +9,7 @@ const displayCards = async() => {
     
     foods.innerHTML = jsAwaited.data.map(details =>  `
             <div class="rounded-t-[20px] overflow-hidden shadow-lg flex flex-col">
-                <a href="#"></a>
-                <div class="relative"><a href="#">
+                <div class="relative"><a href="card-detail.html">
                         <img class="w-full h-full"
                             src="https://images.pexels.com/photos/61180/pexels-photo-61180.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=1&amp;w=500"
                             alt="Sunset in the mountains">
@@ -42,7 +41,7 @@ const displayCards = async() => {
                     </p>
                     <p class="text-gray-700 text-sm pt-2 font-medium">Difficulty: ${details.difficulty}</p>
                     <p class="text-gray-700 text-sm pt-2 font-medium">Calories: ${details.calories} calories</p>
-                    <p class="text-white rounded-lg text-sm mt-2 px-2 w-20 bg-red-400 font-medium">${details.calories}</p>
+                
                 
                 </div>
 
