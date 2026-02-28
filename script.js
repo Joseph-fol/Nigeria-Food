@@ -7,7 +7,6 @@ const displayCards = async() => {
     const jsAwaited = await response.json()
     console.log(jsAwaited);
     
-
     foods.innerHTML = jsAwaited.data.map(details =>  `
             <div class="rounded-t-[20px] overflow-hidden shadow-lg flex flex-col">
                 <a href="#"></a>
@@ -41,6 +40,10 @@ const displayCards = async() => {
                     <p class="text-gray-500 text-md">
                         ${details.description}
                     </p>
+                    <p class="text-gray-700 text-sm pt-2 font-medium">Difficulty: ${details.difficulty}</p>
+                    <p class="text-gray-700 text-sm pt-2 font-medium">Calories: ${details.calories} calories</p>
+                    <p class="text-white rounded-lg text-sm mt-2 px-2 w-20 bg-red-400 font-medium">${details.calories}</p>
+                
                 </div>
 
                 <div class="px-6 py-3 flex flex-row items-center justify-between bg-white border ">
