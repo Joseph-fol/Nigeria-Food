@@ -97,11 +97,11 @@ window.openModal = async function(id){
 
             <div class="p-6 flex flex-col justify-between">
                 <div class="leading-8">
-                    <h2 class="text-3xl font-bold font-serif dark:text-white mb-2">
+                    <h2 class="text-3xl font-bold font-serif text-white mb-2">
                         ${eachFood.name}
                     </h2>
 
-                    <p class="text-gray-600 dark:text-gray-300 mb-4">
+                    <p class="text-white mb-4">
                         ${eachFood.description}
                     </p>
 
