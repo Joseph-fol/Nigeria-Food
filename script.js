@@ -90,7 +90,6 @@ window.openModal = async function(id){
         <div class="bg-gray-800 shadow-lg rounded-2xl overflow-hidden max-w-4xl w-full grid md:grid-cols-2">        
             <div class="h-64 md:h-auto relative">
                 <img src="Images/${eachFood.id}.jpg" alt="${eachFood.name}" class="w-full h-full object-cover">
-
                 <button onclick="closeModal()" class="text-xs absolute top-0 left-0 px-4 py-1 text-lg bg-white text-black mt-3 ml-3 mr-3 rounded-[20px] hover:bg-gray-100">
                     <p class="font-semibold text-md text-gray-500">Back</p>
                 </button>
@@ -98,7 +97,7 @@ window.openModal = async function(id){
 
             <div class="p-6 flex flex-col justify-between">
                 <div class="leading-8">
-                    <h2 class="text-3xl font-bold font-serif text-gray-800 dark:text-white mb-2">
+                    <h2 class="text-3xl font-bold font-serif dark:text-white mb-2">
                         ${eachFood.name}
                     </h2>
 
