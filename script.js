@@ -2,56 +2,31 @@ const foods = document.getElementById("foods")
 
 const allFoods = "https://mongotest2026.vercel.app/api/foods"
 
-// console.log(singleDish);
-
-// Function to get the image path based on food name
-const getImagePath = (foodName) => {
-    // Image mapping for specific food names
-    const imageMap = {
-        'jollof rice': 'jollof-rice.jpg',
-        'egusi': 'egusi.jpg',
-        'egusi soup': 'egusi.jpg',
-        'efo riro': 'efo-riro.jpg',
-        'pounded yam': 'pounded-yam.jpg',
-        'akara': 'akara.jpg',
-        'moi moi': 'moi-moi.jpg',
-        'moin moin': 'moi-moi.jpg',
-        'suya': 'suya.jpg'
-    };
-
-    const normalizedName = foodName.toLowerCase();
-    const imageName = imageMap[normalizedName] || `${normalizedName.replace(/\s+/g, '-')}.jpg`;
-    return `Images/${imageName}`;
-}
-
-
 const displayCards = async () => {
     const response = await fetch(allFoods)
     const jsAwaited = await response.json()
-    // console.log(jsAwaited);
+    console.log(jsAwaited); // Check the API response structure
 
-    foods.innerHTML = jsAwaited.data.map(details => `
-            <div class="rounded-t-[20px] overflow-hidden shadow-lg flex flex-col">
-                <a href="card-detail.html?id=${details.id}"><div class="relative">
-                        <img class="w-full h-64 object-cover"
-                            src="${getImagePath(details.name)}"
-                            alt="${details.name}">
+    jsAwaited.data.map(details => {
+        foods.innerHTML += `
+            <div class="rounded-t-[20px] overflow-hidden shadow-lg flex flex-col hover:scale-105 transition">
+                <div class="relative" onclick="openModal('${details.id}')" style="cursor: pointer;">
+                    <img class="w-full h-64 object-cover"
+                        src="Images/${details.id}.jpg"
+                        alt="${details.name}">
+                    <div
+                        class="focus:bg-transparent transition duration-500 absolute bottom-0 top-0 right-0 left-0 bg-gray-900 opacity-25">
+                    </div>
+                    <div class="flex">
+                        <div class="text-xs absolute top-0 left-0 px-4 py-1 text-lg bg-white text-black mt-3 ml-3 mr-3  hover:bg-white hover:text-indigo-600 transition duration-500 ease-in-out rounded-[20px]">
+                            <p class="font-semibold text-md text-gray-500">${details.region}</p>
+                        </div>
+
                         <div
-                            class="focus:bg-transparent transition duration-300 absolute bottom-0 top-0 right-0 left-0 bg-gray-900 opacity-25">
+                            class="text-xs absolute top-0 right-0 bg-white px-4 py-2 text-black mt-3 mr-3 hover:bg-white hover:text-indigo-600 transition duration-500 ease-in-out">
+                            <p class="font-semibold text-md text-gray-500">Fav</p>
                         </div>
-                        <div class="flex">
-                            <div class="text-xs absolute top-0 left-0 px-4 py-1 text-lg bg-white text-black mt-3 ml-3 mr-3  hover:bg-white hover:text-indigo-600 transition duration-500 ease-in-out rounded-[20px]">
-                                <p class="font-semibold text-md text-gray-500">${details.region}</p>
-                            </div>
-
-                            <div
-                                class="text-xs absolute top-0 right-0 bg-white px-4 py-2 text-black mt-3 mr-3 hover:bg-white hover:text-indigo-600 transition duration-500 ease-in-out">
-                                <p class="font-semibold text-md text-gray-500">Fav</p>
-                            </div>
-
-                        </div>
-                        
-                    </a>
+                    </div>
                 </div>
 
                 <div class="px-4 py-4 mb-auto bg-white">
@@ -85,24 +60,88 @@ const displayCards = async () => {
                     <p class="text-green-900 font-bold">₦${details.price}</p>
                 </div>
             </div>
-            </a>
         `
-    ).join("");
+    })
 };
 
 displayCards()
 
 
+const modalContent = document.getElementById("modalContent")
+const foodModal = document.getElementById("foodModal")
+const BASE_URL = "https://mongotest2026.vercel.app";
 
+function getImagePath(foodName) {
+    return `Images/${foodName}.jpg`;
+}
 
-// async function fetchFoods() {
-//     try {
-//         const response = await fetch(endpoint);
+window.openModal = async function(id){
+    console.log("Modal opened with ID:", id);
+    try {
+        const fetched = await fetch(`${BASE_URL}/api/foods/${id}`);
+        const response = await fetched.json();
+        const eachFood = response.data;        
 
-//         if (!response.ok) {
-//             console.log("Error fetching product")
-//         } else {
-//             response.json();
-//         }
-//     }
-// }
+        const ingredientsList = eachFood.ingredients.map(ingredient => 
+            `<li class="ml-4">${ingredient}</li>`
+        ).join('');
+
+    modalContent.innerHTML = `
+        <div class="bg-gray-50 dark:bg-gray-800 shadow-lg rounded-2xl overflow-hidden max-w-4xl w-full grid md:grid-cols-2">        
+            <div class="h-64 md:h-auto relative">
+                <img src="Images/${eachFood.id}.jpg" 
+                     alt="${eachFood.name}" 
+                     class="w-full h-full object-cover">
+
+                <button onclick="closeModal()" class="text-xs absolute top-0 left-0 px-4 py-1 text-lg bg-white text-black mt-3 ml-3 mr-3 rounded-[20px] hover:bg-gray-100">
+                    <p class="font-semibold text-md text-gray-500">Back</p>
+                </button>
+            </div>
+
+            <div class="p-6 flex flex-col justify-between">
+                <div class="leading-8">
+                    <h2 class="text-3xl font-bold font-serif text-gray-800 dark:text-white mb-2">
+                        ${eachFood.name}
+                    </h2>
+
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">
+                        ${eachFood.description}
+                    </p>
+
+                    <p class="text-white"><strong> Difficulty: </strong> ${eachFood.difficulty}</p>
+                    <p class="text-white"><strong>Calories:</strong> ${eachFood.calories}</p>
+                    <p class="text-white"><strong>Price:</strong> ₦${eachFood.price}</p>
+
+                    <strong class="text-red-600 pt-3">Ingredients</strong>
+                    <ul class="text-white list-disc">
+                        ${ingredientsList}
+                    </ul>
+                </div>
+
+                <div class="mt-6 text-right">
+                    <button class="bg-red-600 hover:bg-red-700 text-white font-semibold px-4 py-2 rounded-lg transition">
+                        Add to Favorite
+                    </button>
+                </div>
+            </div>
+        </div>
+    `;
+    foodModal.classList.remove("hidden");
+    foodModal.style.display = "flex";
+    } catch (error) {
+        console.error("Error loading food details:", error);
+    }
+};
+
+// Make closeModal globally accessible
+window.closeModal = function() {
+    foodModal.classList.add("hidden");
+    foodModal.style.display = "none";
+}
+
+// Close modal when clicking outside the content
+foodModal?.addEventListener('click', function(e) {
+    if (e.target === foodModal) {
+        closeModal();
+    }
+});
