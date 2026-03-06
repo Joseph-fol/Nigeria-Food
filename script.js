@@ -101,7 +101,7 @@ window.openModal = async function(id){
                         ${eachFood.name}
                     </h2>
 
-                    <p class="text-white mb-4">
+                    <p class="text-gray-400 mb-4">
                         ${eachFood.description}
                     </p>
 
