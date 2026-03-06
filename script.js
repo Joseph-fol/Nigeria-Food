@@ -87,7 +87,7 @@ window.openModal = async function(id){
         ).join('');
 
     modalContent.innerHTML = `
-        <div class="bg-gray-5 dark:bg-gray-800 shadow-lg rounded-2xl overflow-hidden max-w-4xl w-full grid md:grid-cols-2">        
+        <div class="bg-gray-800 shadow-lg rounded-2xl overflow-hidden max-w-4xl w-full grid md:grid-cols-2">        
             <div class="h-64 md:h-auto relative">
                 <img src="Images/${eachFood.id}.jpg" alt="${eachFood.name}" class="w-full h-full object-cover">
 
